@@ -3,11 +3,9 @@ const cors = require("cors");
 const app = express();
 
 require("dotenv").config();
-require("./config/db");
+require("./config/db"); // initializes DB connection
 
-app.use(cors({
-  origin: "*"
-}));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const authRoutes = require("./routes/auth.routes");
